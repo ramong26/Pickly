@@ -8,6 +8,7 @@ interface TextboxProps {
   subText?: string;
   className?: string;
   maxLength?: number;
+  value?: string;
 }
 
 export function Textbox({
@@ -16,6 +17,8 @@ export function Textbox({
   error,
   subText,
   maxLength,
+
+  value,
   ...rest
 }: TextboxProps) {
   const { description, setDescription } = useModalStore();
@@ -33,6 +36,7 @@ export function Textbox({
         className={`relative rounded-[8px] p-[1px] h-[120px] bg-[#353542] ${isError} ${className}`}
       >
         <textarea
+          value={value}
           className={`
             w-full h-full outline-0 resize-none overflow-y-auto break-words 
             rounded-[8px] bg-[#252530] p-[20px] 

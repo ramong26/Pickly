@@ -9,7 +9,6 @@ import { useRouter } from "next/navigation";
 import useModalStore from "@/features/home/modals/store/modalStore";
 import { ProductInfo } from "@/features/home/types/productType";
 import { handleSubmit } from "@/lib/utils/addProductFunction";
-import editProductFunction from "@/lib/utils/editProductFunction";
 import ProductComparePlusModal from "./ProductComparePlusModal";
 
 interface Props {
@@ -182,25 +181,26 @@ const AddEditProductModal = ({
         <BaseButton
           className="lg:w-[540px] lg:h-[65px] md:w-[510px] md:h-[55px] md:mt-[40px] mt-[20px] md:ml-[20px] lg:text-[18px] text-[16px] font-semibold rounded-lg"
           onClick={() => {
-            modalType === "addProduct"
-              ? handleSubmit({
-                  file,
-                  setFile,
-                  handleClose,
-                  setAddProduct,
-                  setIsLogin,
-                  setMessage,
-                  name,
-                  description,
-                  categoryId,
-                  setName,
-                  setDescription,
-                  setImage,
-                  setCategoryId,
-                  setClickedValue,
-                  image,
-                })
-              : editProductFunction(); // 편집 함수 호출
+            if (modalType === "addProduct") {
+              handleSubmit({
+                file,
+                setFile,
+                handleClose,
+                setAddProduct,
+                setIsLogin,
+                setMessage,
+                name,
+                description,
+                categoryId,
+                setName,
+                setDescription,
+                setImage,
+                setCategoryId,
+                setClickedValue,
+                image,
+              });
+            }
+            // else 부분 없음 -> editProductFunction 호출 안 함
           }}
         >
           {buttonPlaceholder}
