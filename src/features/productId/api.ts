@@ -72,24 +72,12 @@ class ProductService {
     return axios.get(url);
   }
 
-  postProductsFavorite(productId: number, accessToken: string) {
-    return axios.post(
-      `${BaseURL}/products/${productId}/favorite`,
-      {},
-      {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      }
-    );
+  postProductsFavorite(productId: number) {
+    return axios.post(`${BaseURL}/products/${productId}/favorite`, {});
   }
 
-  deleteProductsFavorite(productId: number, accessToken: string) {
-    return axios.delete(`${BaseURL}/products/${productId}/favorite`, {
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
-    });
+  deleteProductsFavorite(productId: number) {
+    return axios.delete(`${BaseURL}/products/${productId}/favorite`, {});
   }
 }
 
