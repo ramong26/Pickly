@@ -14,15 +14,11 @@ export default async function postImage({ file, accessToken }: Props) {
     const formData = new FormData();
     formData.append("image", file);
 
-    const res = await axios.post(
-      `${Base_URL}/images/upload`,
-        formData,
-      {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      }
-    );
+    const res = await axios.post(`${Base_URL}/14-6/images/upload`, formData, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
     return res.data;
   } catch (error) {
     console.error("상품 이미지 등록 실패", error);

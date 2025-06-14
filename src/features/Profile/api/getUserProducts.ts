@@ -19,7 +19,7 @@ export async function getUserProducts(
     ? Base_URL.slice(0, -1)
     : Base_URL;
 
-  const url = `${baseUrlWithoutSlash}/users/${userId}/${type}-products`;
+  const url = `${baseUrlWithoutSlash}/14-6/users/${userId}/${type}-products`;
 
   const res = await axios.get(url, {
     params: { cursor },

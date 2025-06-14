@@ -14,7 +14,7 @@ class ProductService {
     order?: "recent" | "rating" | "reviewCount";
     cursor?: number;
   }) {
-    let url = `${BaseURL}/products`;
+    let url = `${BaseURL}/14-6/products`;
     if (keyword) url += `?keyword=${keyword}`;
     if (category) url += `&category=${category}`;
     if (order) url += `&order=${order}`;
@@ -26,7 +26,7 @@ class ProductService {
     const headers = accessToken
       ? { Authorization: `Bearer ${accessToken}` }
       : {};
-    return axios.get(`${BaseURL}/products/${productId}`, { headers });
+    return axios.get(`${BaseURL}/14-6/products/${productId}`, { headers });
   }
 
   patchProductsId({
@@ -45,7 +45,7 @@ class ProductService {
     accessToken: string;
   }) {
     return axios.patch(
-      `${BaseURL}/products/${productId}`,
+      `${BaseURL}/14-6/products/${productId}`,
       {
         name,
         description,
@@ -64,7 +64,7 @@ class ProductService {
     order?: "recent" | "ratingDesc" | "ratingAsc" | "likeCount" | undefined,
     cursor?: number
   ) {
-    let url = `${BaseURL}/products/${productId}/reviews`;
+    let url = `${BaseURL}/14-6/products/${productId}/reviews`;
 
     if (order) url += `?order=${order}`;
     if (cursor) url += `&cursor=${cursor}`;
@@ -73,20 +73,20 @@ class ProductService {
   }
 
   postProductsFavorite(productId: number) {
-    return axios.post(`${BaseURL}/products/${productId}/favorite`, {});
+    return axios.post(`${BaseURL}/14-6/products/${productId}/favorite`, {});
   }
 
   deleteProductsFavorite(productId: number) {
-    return axios.delete(`${BaseURL}/products/${productId}/favorite`, {});
+    return axios.delete(`${BaseURL}/14-6/products/${productId}/favorite`, {});
   }
 }
 
 class UserService {
   getUser() {
-    return axios.get(`${BaseURL}/users/me`);
+    return axios.get(`${BaseURL}/14-6/users/me`);
   }
   getUserIdFavoriteProduct(userId: number) {
-    return axios.get(`${BaseURL}/users/${userId}/favorite-products`);
+    return axios.get(`${BaseURL}/14-6/users/${userId}/favorite-products`);
   }
 }
 
@@ -102,7 +102,7 @@ class ReviewService {
     rating: number;
     images: string[];
   }) {
-    return axios.post(`${BaseURL}/reviews`, {
+    return axios.post(`${BaseURL}/14-6/reviews`, {
       productId,
       content,
       rating,
@@ -110,7 +110,7 @@ class ReviewService {
     });
   }
   deleteReviews(reviewId: number) {
-    return axios.delete(`${BaseURL}/reviews/${reviewId}`, {});
+    return axios.delete(`${BaseURL}/14-6/reviews/${reviewId}`, {});
   }
   patchReviews({
     reviewId,
@@ -123,7 +123,7 @@ class ReviewService {
     rating: number;
     images: string[];
   }) {
-    return axios.patch(`${BaseURL}/reviews/${reviewId}`, {
+    return axios.patch(`${BaseURL}/14-6/reviews/${reviewId}`, {
       content,
       rating,
       images,
@@ -131,11 +131,11 @@ class ReviewService {
   }
 
   postReviewsLike(reviewId: number) {
-    return axios.post(`${BaseURL}/reviews/${reviewId}/like`, {});
+    return axios.post(`${BaseURL}/14-6/reviews/${reviewId}/like`, {});
   }
 
   deleteReviewsLike(reviewId: number) {
-    return axios.delete(`${BaseURL}/reviews/${reviewId}/like`);
+    return axios.delete(`${BaseURL}/14-6/reviews/${reviewId}/like`);
   }
 }
 
@@ -145,7 +145,7 @@ class ImageService {
     formData.append("image", file);
 
     const response = await axios.post<{ url: string }>(
-      `${BaseURL}/images/upload`,
+      `${BaseURL}/14-6/images/upload`,
       formData
     );
 

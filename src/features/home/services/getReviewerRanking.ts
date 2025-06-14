@@ -14,7 +14,7 @@ export interface ReviewRanking {
 
 export default async function getReviewerRanking(): Promise<ReviewRanking[]> {
   try {
-    const response = await fetch(`${Base_URL}/users/ranking`, {
+    const response = await fetch(`${Base_URL}/14-6/users/ranking`, {
       method: "GET",
       cache: "no-store",
     });

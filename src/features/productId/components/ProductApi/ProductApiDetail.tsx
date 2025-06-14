@@ -11,12 +11,15 @@ export default async function ProductApiDetail({
   const response = await productService.getProductsId(productId);
   const product = response.data;
   if (!product) return <div>상품 정보가 없습니다.</div>;
-  console.log("product", product);
 
   const combinedText = `${product.name}\n${product.description}`;
 
-  // 아티스트 이름과 설명을 추출하여 ai에게 전달
   const albumInfo = await fetchArtistAlbum(combinedText);
+
+  if (!albumInfo || typeof albumInfo !== "string") {
+    console.error("albumInfo가 유효하지 않음:", albumInfo);
+    return <div>아티스트 정보를 가져오지 못했습니다.</div>;
+  }
 
   let artistName = "";
   let albumName = "";
@@ -31,25 +34,26 @@ export default async function ProductApiDetail({
       }
     }
 
-    // JSON 문자열 파싱
     const albumInfoObj = JSON.parse(jsonStr);
 
-    artistName = albumInfoObj.artist?.replace(/\(.*?\)/g, "").trim() ?? "";
-    albumName = albumInfoObj.album?.trim() ?? "";
+    artistName = albumInfoObj.artist
+      ? albumInfoObj.artist.replace(/\(.*?\)/g, "").trim()
+      : "";
+
+    albumName = albumInfoObj.album ? albumInfoObj.album.trim() : "";
   } catch (error) {
     console.error("albumInfo JSON 파싱 실패:", error, "응답값:", albumInfo);
     return <div>아티스트 정보를 파싱할 수 없습니다.</div>;
   }
 
-  const searchQuery =
-    artistName.length > 0
-      ? `${artistName} ${albumName} official music video`.trim()
-      : combinedText;
+  const searchQuery = artistName
+    ? `${artistName} ${albumName} official music video`.trim()
+    : combinedText;
 
   return (
     <>
       {product.category?.id === 1 && (
-        <div className="flex gap-[20px] flex-col ">
+        <div className="flex gap-[20px] flex-col">
           <div className="text-white lg:text-[20px] md:text-[16px] font-normal">
             음악 들으러 가기
           </div>

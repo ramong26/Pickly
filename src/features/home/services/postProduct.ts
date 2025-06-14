@@ -23,10 +23,10 @@ export default async function postProduct({
     description,
     name,
   });
-  
+
   try {
     const res = await axios.post(
-      `${Base_URL}/products`,
+      `${Base_URL}/14-6/products`,
       {
         categoryId,
         image,

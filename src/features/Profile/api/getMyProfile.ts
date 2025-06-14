@@ -14,7 +14,7 @@ export async function getMyProfile() {
     ? Base_URL.slice(0, -1)
     : Base_URL;
 
-  const url = `${baseUrlWithoutSlash}/users/me`;
+  const url = `${baseUrlWithoutSlash}/14-6/users/me`;
 
   const res = await axios.get(url, {
     headers: {

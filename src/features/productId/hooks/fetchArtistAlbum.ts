@@ -4,17 +4,24 @@ export default async function fetchArtistAlbum(text: string) {
   const baseUrl =
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
-      : process.env.NEXT_PUBLIC_BASE_URL ||
-        "https://mogazoa-api.vercel.app/14-6";
+      : process.env.NEXT_PUBLIC_BASE_URL || "https://mogazoa-api.vercel.app";
 
-  const res = await fetch(`${baseUrl}/api/openai`, {
+  const apiPath = "/api/14-6/openai";
+
+  const normalizedBaseUrl = baseUrl.endsWith("/")
+    ? baseUrl.slice(0, -1)
+    : baseUrl;
+
+  const url = normalizedBaseUrl + apiPath;
+
+  const res = await fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ text }),
   });
-
+  console.log("fetch URL:", url);
   if (!res.ok) {
     console.error("API 응답 실패", await res.text());
     return null;

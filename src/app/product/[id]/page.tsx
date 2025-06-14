@@ -17,7 +17,7 @@ export default async function ProductIdPage({
 
   if (isNaN(productId)) return null;
   const sp = await searchParams;
-
+  console.log(productId);
   return (
     <div>
       <header className="fixed top-0 left-0 right-0 z-999">

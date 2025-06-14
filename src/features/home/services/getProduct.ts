@@ -16,7 +16,7 @@ export async function getProducts({
   order,
   cursor,
 }: Props): Promise<Product> {
-  let url = `${Base_URL}/products`;
+  let url = `${Base_URL}/14-6/products`;
   const params = new URLSearchParams();
 
   if (keyword) params.append("keyword", keyword);
@@ -53,7 +53,7 @@ export async function getProductsFetch({
   console.log(query);
 
   try {
-    const response = await fetch(`${Base_URL}/products?${query}`, {
+    const response = await fetch(`${Base_URL}/14-6/products?${query}`, {
       method: "GET",
     });
     if (!response.ok) {

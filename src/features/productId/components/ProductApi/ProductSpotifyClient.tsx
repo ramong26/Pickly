@@ -42,7 +42,7 @@ export default function ProductSpotifyClient({
       return;
     }
 
-    const res = await fetch("/api/spotify-token");
+    const res = await fetch("/api/14-6/spotify-token");
     const data = await res.json();
     const accessToken = data.access_token;
 
