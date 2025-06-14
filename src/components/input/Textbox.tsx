@@ -9,6 +9,7 @@ interface TextboxProps {
   className?: string;
   maxLength?: number;
   value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
 export function Textbox({
@@ -17,7 +18,7 @@ export function Textbox({
   error,
   subText,
   maxLength,
-
+  onChange,
   value,
   ...rest
 }: TextboxProps) {
@@ -48,6 +49,7 @@ export function Textbox({
             if (allowedPattern.test(value)) {
               if (value.length <= 500) {
                 setDescription(value);
+                if (onChange) onChange(e);
               } else {
                 toast.error("500자 이내로 입력해주세요.");
               }

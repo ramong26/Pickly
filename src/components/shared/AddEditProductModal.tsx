@@ -123,10 +123,6 @@ const AddEditProductModal = ({
               className="md:w-[360px] lg:h-[70px] md:h-[60px] w-[295px] h-[55px] md:mt-0 mt-[10px] mb-0"
               placeholder="상품명 (상품 등록 여부를 확인해 주세요)"
               type="text"
-              value={productinfo && productinfo.name}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                setName(e.target.value)
-              }
             />
             <CategoryDropDown />
           </div>
