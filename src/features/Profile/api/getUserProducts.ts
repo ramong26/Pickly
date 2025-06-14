@@ -1,4 +1,4 @@
-import { apiInstance } from "@/lib/axios/index"; // 서버 전용 Axios 인스턴스
+import apiInstance from "@/lib/axios/index"; // 서버 전용 Axios 인스턴스
 // import { cookies } from "next/headers";
 import { ProductTabType } from "../types/user";
 
