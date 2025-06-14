@@ -1,6 +1,6 @@
 import FloatingButton from "@/components/shared/FloatingButton";
 import Header from "@/components/shared/Header";
-import Category from "@/features/home/components/Category";
+
 import ProductCard from "@/components/shared/ProductCard";
 import ReviewerRanking from "@/features/home/components/ReviewerRanking";
 import { getProductsFetch } from "@/features/home/services/getProduct";
@@ -9,10 +9,8 @@ import MoreProducts from "@/features/home/components/MoreProducts";
 import AddEditProductModal from "@/components/shared/AddEditProductModal";
 
 export default async function HomePage({
-  params,
   searchParams,
 }: {
-  params: { id: string };
   searchParams?: { [key: string]: string | string[] | undefined };
 }) {
   const hotProduct = await getProductsFetch({ order: "reviewCount" });
@@ -27,9 +25,7 @@ export default async function HomePage({
       </header>
 
       <div className="relative flex flex-row lg:justify-center 2xl:px-[180px] md:px-0 px-[20px] mt-[100px] lg:mx-auto">
-        <div className="fixed 2xl:left-[180px] md:left-0 md:flex hidden">
-          <Category categoryId={params.id} />
-        </div>
+        <div className="fixed 2xl:left-[180px] md:left-0 md:flex hidden"></div>
 
         <div className="lg:flex flex-col mt-[60px] hidden lg:mb-[50px] mb-[30px]">
           <span className="lg:text-[24px] text-[#F1F1F5] font-semibold">
