@@ -1,5 +1,3 @@
-export const revalidate = 10;
-
 import FloatingButton from "@/components/shared/FloatingButton";
 import Header from "@/components/shared/Header";
 
@@ -9,7 +7,7 @@ import { getProductsFetch } from "@/features/home/services/getProduct";
 import HighStarProduct from "@/features/home/components/HighStarProduct";
 import MoreProducts from "@/features/home/components/MoreProducts";
 import AddEditProductModal from "@/components/shared/AddEditProductModal";
-
+export const revalidate = 10;
 export default async function HomePage({
   searchParams,
 }: {
