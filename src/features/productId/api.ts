@@ -152,20 +152,13 @@ class ReviewService {
 }
 
 class ImageService {
-  async postImage(file: File, accessToken: string): Promise<string> {
+  async postImage(file: File): Promise<string> {
     const formData = new FormData();
     formData.append("image", file);
 
     const response = await axios.post<{ url: string }>(
       `${BaseURL}/images/upload`,
-      formData,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-          Accept: "application/json",
-          Authorization: `Bearer ${accessToken}`,
-        },
-      }
+      formData
     );
 
     return response.data.url;
