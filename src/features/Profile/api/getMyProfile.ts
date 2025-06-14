@@ -1,7 +1,8 @@
 // import { cookies } from "next/headers";
-import apiServerInstance from "@/lib/axios/index";
+import axios from "axios";
 
 export async function getMyProfile() {
+  const Base_URL = process.env.NEXT_PUBLIC_BASE_URL;
   //   const cookieStore = cookies();
   const token =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Nzk3LCJ0ZWFtSWQiOiIxNC02IiwiaWF0IjoxNzQ4NjczMzEwLCJpc3MiOiJzcC1tb2dhem9hIn0.Almry9H8io3c3gR61WPBuy_sXosdjsL3QgZBvLUy0Bw";
@@ -11,7 +12,7 @@ export async function getMyProfile() {
   //     throw new Error("Access token is missing");
   //   }
 
-  const res = await apiServerInstance.get("/users/me", {
+  const res = await axios.get(`${Base_URL}/users/me`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
