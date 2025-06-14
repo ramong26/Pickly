@@ -3,7 +3,7 @@ import { getMyProfile } from "@/features/Profile/api/getMyProfile";
 import { getUserProducts } from "@/features/Profile/api/getUserProducts";
 import ActivitySection from "@/features/Profile/components/ActivitySection";
 import ProductTabSection from "@/features/Profile/components/ProductTabSection";
-
+import { Suspense } from "react";
 import ProfileCard from "@/features/Profile/components/ProfileCard";
 
 export default async function MyPage() {
@@ -24,11 +24,13 @@ export default async function MyPage() {
           </span>
           <ActivitySection user={user} />
 
-          <ProductTabSection
-            userId={user.id}
-            initialTab="reviewed"
-            initialProducts={initialProducts}
-          />
+          <Suspense fallback={<div>로딩 중...</div>}>
+            <ProductTabSection
+              userId={user.id}
+              initialTab="reviewed"
+              initialProducts={initialProducts}
+            />
+          </Suspense>
         </div>
       </div>
     </>
