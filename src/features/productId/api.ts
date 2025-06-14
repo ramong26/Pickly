@@ -108,35 +108,21 @@ class ReviewService {
     content,
     rating,
     images,
-    accessToken,
   }: {
     productId: number;
     content: string;
     rating: number;
     images: string[];
-    accessToken: string;
   }) {
-    return axios.post(
-      `${BaseURL}/reviews`,
-      {
-        productId,
-        content,
-        rating,
-        images,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      }
-    );
-  }
-  deleteReviews(reviewId: number, accessToken: string) {
-    return axios.delete(`${BaseURL}/reviews/${reviewId}`, {
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
+    return axios.post(`${BaseURL}/reviews`, {
+      productId,
+      content,
+      rating,
+      images,
     });
+  }
+  deleteReviews(reviewId: number) {
+    return axios.delete(`${BaseURL}/reviews/${reviewId}`, {});
   }
   patchReviews({
     reviewId,
