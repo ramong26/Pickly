@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+
 import ProductTabHeader from "./ProductTabHeader";
 import { Product, ProductTabType } from "../types/user";
 import ProductGrid from "./ProductGrid";
