@@ -2,7 +2,8 @@
 import BaseButton from "@/components/shared/BaseButton";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-
+import Image from "next/image";
+import logo from "../../public/icons/404logo.png";
 export default function NotFound() {
   const router = useRouter();
 
@@ -14,8 +15,8 @@ export default function NotFound() {
     <div>
       <div className="flex flex-col items-center justify-center min-h-screen ">
         <div className="relative">
-          <img
-            src="/icons/404logo.png"
+          <Image
+            src={logo}
             alt="404Image"
             className="lg:w-[179px] lg:h-[159px] md:w-[150px] md:h-[130px] w-[120px] h-[100px]"
           />

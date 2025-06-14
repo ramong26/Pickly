@@ -11,7 +11,7 @@ export interface Product {
     writerId: number;
     createdAt: string;
     updatedAt: string;
-  }[];
+  };
 }
 
 export interface ProductList {

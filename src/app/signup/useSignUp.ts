@@ -4,7 +4,7 @@ import { JoinForm } from "./validationSchema";
 import { AuthResponse } from "../signin/validationSchema";
 
 export function useSignUp(
-  options?: UseMutationOptions<AuthResponse, Error, JoinForm> // any -> Error
+  options?: UseMutationOptions<AuthResponse, Error, JoinForm>
 ) {
   const mutation = useMutation({
     mutationFn: async (form: JoinForm) => {

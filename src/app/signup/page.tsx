@@ -10,6 +10,7 @@ import { AuthResponse } from "../signin/validationSchema";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import toast from "react-hot-toast";
+
 const login_logo = "/signup_logo.svg";
 
 const SignUpPage = () => {
@@ -22,11 +23,12 @@ const SignUpPage = () => {
         router.replace("/signin");
       }, 1000);
     },
-    onError: (error: any) => {
-      toast.error(
-        error?.response?.data?.message ||
-          "회원가입에 실패했습니다. 다시 시도해 주세요."
-      );
+    onError: (error: unknown) => {
+      let message = "회원가입에 실패했습니다. 다시 시도해 주세요.";
+      if (error instanceof Error) {
+        message = error.message;
+      }
+      toast.error(message);
     },
   });
 

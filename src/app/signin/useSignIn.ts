@@ -3,7 +3,7 @@ import { useMutation, UseMutationOptions } from "@tanstack/react-query";
 import { AuthResponse, LoginForm } from "./validationSchema";
 
 export function useLoginMutation(
-  options?: UseMutationOptions<AuthResponse, Error, LoginForm> // 여기서 any -> Error 로 변경
+  options?: UseMutationOptions<AuthResponse, Error, LoginForm>
 ) {
   const mutation = useMutation({
     mutationFn: async (form: LoginForm) => {

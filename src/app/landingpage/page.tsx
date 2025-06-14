@@ -8,13 +8,14 @@ import LandingPageTop from "@/features/landing/components/LandingPageTop";
 import MovingCategories from "@/features/landing/components/MovingCategories";
 import SometimesTie from "@/features/landing/components/SometimesTie";
 import SometimesWin from "@/features/landing/components/SometimesWin";
-
+import Image from "next/image";
+import bg from "../../../public/signup_bg.jpg";
 export default function LandingPage() {
   return (
     <>
       <main className="relative overflow-x-hidden flex flex-col lg:px-[160px] px-[24px]">
-        <img
-          src="/signup_bg.jpg"
+        <Image
+          src={bg}
           alt="bgImage"
           className="absolute inset-0 w-full z-0 lg:h-[2000px] md:h-[1204px] h-[806px]"
         />
