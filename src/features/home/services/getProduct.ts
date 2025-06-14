@@ -16,19 +16,12 @@ export async function getProducts({
   order,
   cursor,
 }: Props): Promise<Product> {
-  const params: Record<string, unknown> = {};
-  if (keyword) params.keyword = keyword;
-  if (categoryId) params.category = categoryId;
-  if (order) params.order = order;
-  if (cursor) params.cursor = cursor;
-
-  try {
-    const response = await axios.get(`${Base_URL}/products`, { params });
-    return response.data;
-  } catch (error) {
-    console.log(`상품 가져오기 실패: ${error}`);
-    throw error;
-  }
+  let url = `${Base_URL}/products`;
+  if (keyword) url += `?keyword=${keyword}`;
+  if (categoryId) url += `&category=${categoryId}`;
+  if (order) url += `&order=${order}`;
+  if (cursor) url += `&cursor=${cursor}`;
+  return axios.get(url);
 }
 
 export async function getProductsFetch({
