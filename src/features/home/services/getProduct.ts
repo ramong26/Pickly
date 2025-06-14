@@ -54,7 +54,6 @@ export async function getProductsFetch({
 
   try {
     const response = await fetch(`${Base_URL}/products?${query}`, {
-      cache: "no-store",
       method: "GET",
     });
     if (!response.ok) {

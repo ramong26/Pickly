@@ -1,3 +1,5 @@
+export const revalidate = 10;
+
 import FloatingButton from "@/components/shared/FloatingButton";
 import Header from "@/components/shared/Header";
 
