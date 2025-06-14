@@ -13,7 +13,7 @@ export default async function HomePage({
   searchParams,
 }: {
   params: { id: string };
-  searchParams: Promise<{ [key: string]: string | undefined }>;
+  searchParams?: { [key: string]: string | string[] | undefined };
 }) {
   const hotProduct = await getProductsFetch({ order: "reviewCount" });
   const starProduct = await getProductsFetch({ order: "rating" });
