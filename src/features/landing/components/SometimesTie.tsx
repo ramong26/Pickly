@@ -3,9 +3,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import BaseButton from "@/components/shared/BaseButton";
-type Props = {};
 
-const SometimesTie = (props: Props) => {
+const SometimesTie = () => {
   return (
     <div className="flex flex-col lg:mt-[236px] md:mt-[160px] mt-[72px]">
       <motion.h2

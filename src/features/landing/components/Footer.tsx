@@ -1,9 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-type Props = {};
-
-const Footer = (props: Props) => {
+const Footer = () => {
   return (
     <footer className="bg-[#D9D9D91A] lg:px-[160px] px-[24px] lg:h-[758px] lg:mt-[76px] md:mt-[47px] mt-[53px]">
       <div className="flex flex-row justify-between">

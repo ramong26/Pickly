@@ -57,15 +57,16 @@ Ken Carson의 앨범으로, Playboi Carti의 레이블 Opium을 통해 출시됨
     const result = completion.choices[0].message?.content || "";
 
     return NextResponse.json({ result });
-  } catch (error: any) {
+  } catch (error) {
+    const Error = error as Error & { cause?: unknown };
     console.error("OpenAI API 호출 실패:", {
-      message: error.message,
-      name: error.name,
-      stack: error.stack,
-      cause: error.cause,
+      message: Error.message,
+      name: Error.name,
+      stack: Error.stack,
+      cause: Error.cause,
     });
     return NextResponse.json(
-      { error: "OpenAI API 호출 실패", detail: error.message },
+      { error: "OpenAI API 호출 실패", detail: Error.message },
       { status: 500 }
     );
   }

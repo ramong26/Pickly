@@ -5,9 +5,7 @@ import CategoryCard from "./CategoryCard";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
 
-type Props = {};
-
-const CategoryGrid = (props: Props) => {
+const CategoryGrid = () => {
   return (
     <div className="flex flex-col md:mt-[100px] mt-[36px]">
       <motion.div

@@ -2,9 +2,7 @@ import React from "react";
 import { FaArrowRight } from "react-icons/fa6";
 import Link from "next/link";
 
-type Props = {};
-
-const LandingPageTop = (props: Props) => {
+const LandingPageTop = () => {
   return (
     <div className="flex flex-col justify-center items-center">
       <div className="lg:mt-[46px] md:mt-[88px] mt-[65px] flex space-x-1">

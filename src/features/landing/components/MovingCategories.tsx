@@ -3,9 +3,7 @@ import CategoryChip from "@/components/CategoryChip";
 import { motion, useAnimationControls } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 
-type Props = {};
-
-const MovingCategories = (props: Props) => {
+const MovingCategories = () => {
   const controls = useAnimationControls();
   const listRef = useRef<HTMLDivElement>(null);
   const categories = [

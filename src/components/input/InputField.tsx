@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const eyeOpen = '/icons/eye_open.svg';
-const eyeClose = '/icons/eye_close.svg';
+const eyeOpen = "/icons/eye_open.svg";
+const eyeClose = "/icons/eye_close.svg";
 
 interface InputFieldProps {
   id?: string;
@@ -12,7 +12,6 @@ interface InputFieldProps {
   subText?: string;
   withEyeToggle?: boolean;
   error?: string;
-  [key: string]: any;
 }
 
 export function InputField({
@@ -29,7 +28,7 @@ export function InputField({
 
   const hasError = !!error;
   const message = error || subText;
-  const isActive = 'focus-within:bg-gradient-to-r from-[#5097fa] to-[#5363ff]' 
+  const isActive = "focus-within:bg-gradient-to-r from-[#5097fa] to-[#5363ff]";
 
   const isError = hasError ? "!bg-[var(--color-red)] " : isActive;
 
@@ -40,11 +39,18 @@ export function InputField({
   return (
     <>
       {/* input 박스 */}
-      {label && <label className="block mb-[10px] text-[var(--color-white)] text-[14px] md:text-[16px]">{label}</label>}
-      <div 
+      {label && (
+        <label
+          htmlFor={id}
+          className="block mb-[10px] text-[var(--color-white)] text-[14px] md:text-[16px]"
+        >
+          {label}
+        </label>
+      )}
+      <div
         className={`relative rounded-[8px] p-[1px] bg-[#353542] ${isError} ${className}`}
-      > 
-        <input 
+      >
+        <input
           className={`w-full h-full outline-0 border-0 rounded-[8px] bg-[#252530] px-[20px] placeholder-[var(--color-deepGray)] text-[var(--color-white)] `}
           placeholder={placeholder}
           type={passwordBoxType ? "password" : "text"}

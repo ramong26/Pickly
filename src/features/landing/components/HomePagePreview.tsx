@@ -1,9 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-type Props = {};
-
-const HomePagePreview = (props: Props) => {
+const HomePagePreview = () => {
   return (
     <div className="flex flex-col lg:mt-[150px] md:mt-[120px] mt-[82px]">
       <div className="lg:w-[545px] md:w-[280px] w-[140px]">

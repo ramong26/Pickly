@@ -1,12 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { RxTriangleDown } from "react-icons/rx";
 import { motion, AnimatePresence } from "framer-motion";
 import useModalStore from "@/features/home/modals/store/modalStore";
 
-type Props = {};
-
-const CategoryDropDown = (props: Props) => {
+const CategoryDropDown = () => {
   const {
     isClicked,
     setIsClicked,

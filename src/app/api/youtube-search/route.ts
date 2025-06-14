@@ -35,12 +35,13 @@ export async function GET(request: Request) {
 
     const data = await response.json();
     return NextResponse.json(data);
-  } catch (error: any) {
-    console.error("YouTube API fetch error:", error);
+  } catch (error) {
+    const Error = error as Error;
+    console.error("YouTube API fetch error:", Error);
     return NextResponse.json(
       {
         error: "Failed to fetch data from YouTube API",
-        details: error.message,
+        details: Error.message,
       },
       { status: 500 }
     );

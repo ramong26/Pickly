@@ -8,7 +8,6 @@ interface TextboxProps {
   subText?: string;
   className?: string;
   maxLength?: number;
-  [key: string]: any;
 }
 
 export function Textbox({
