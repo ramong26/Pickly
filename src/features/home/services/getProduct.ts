@@ -17,13 +17,21 @@ export async function getProducts({
   cursor,
 }: Props): Promise<Product> {
   let url = `${Base_URL}/products`;
-  if (keyword) url += `?keyword=${keyword}`;
-  if (categoryId) url += `&category=${categoryId}`;
-  if (order) url += `&order=${order}`;
-  if (cursor) url += `&cursor=${cursor}`;
-  return axios.get(url);
-}
+  const params = new URLSearchParams();
 
+  if (keyword) params.append("keyword", keyword);
+  if (categoryId !== null && categoryId !== undefined)
+    params.append("category", String(categoryId));
+  if (order) params.append("order", order);
+  if (cursor) params.append("cursor", String(cursor));
+
+  if (params.toString()) {
+    url += `?${params.toString()}`;
+  }
+
+  const response = await axios.get<Product>(url);
+  return response.data; // 꼭 data만 반환하도록!
+}
 export async function getProductsFetch({
   keyword,
   categoryId,
