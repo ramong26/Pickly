@@ -16,7 +16,7 @@ export async function getProducts({
   order,
   cursor,
 }: Props): Promise<Product> {
-  const params: Record<string, any> = {};
+  const params: Record<string, unknown> = {};
   if (keyword) params.keyword = keyword;
   if (categoryId) params.category = categoryId;
   if (order) params.order = order;
@@ -37,13 +37,17 @@ export async function getProductsFetch({
   order,
   cursor,
 }: Props): Promise<Product> {
-  const params: Record<string, any> = {};
+  const params: Record<string, unknown> = {};
   if (keyword) params.keyword = keyword;
   if (categoryId) params.category = categoryId;
   if (order) params.order = order;
   if (cursor) params.cursor = cursor;
 
-  const query = new URLSearchParams(params).toString();
+  const stringParams: Record<string, string> = Object.fromEntries(
+    Object.entries(params).map(([k, v]) => [k, String(v)])
+  );
+
+  const query = new URLSearchParams(stringParams);
 
   console.log(query);
 

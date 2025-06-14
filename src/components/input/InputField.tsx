@@ -12,6 +12,7 @@ interface InputFieldProps {
   subText?: string;
   withEyeToggle?: boolean;
   error?: string;
+  type?: string;
 }
 
 export function InputField({
@@ -22,6 +23,7 @@ export function InputField({
   subText,
   withEyeToggle,
   error,
+  type = "text",
   ...rest
 }: InputFieldProps) {
   const [passwordBoxType, setPasswordBoxType] = useState(true);
@@ -53,7 +55,7 @@ export function InputField({
         <input
           className={`w-full h-full outline-0 border-0 rounded-[8px] bg-[#252530] px-[20px] placeholder-[var(--color-deepGray)] text-[var(--color-white)] `}
           placeholder={placeholder}
-          type={passwordBoxType ? "password" : "text"}
+          type={type === "password" ? "password" : "text"}
           {...rest}
         />
 
