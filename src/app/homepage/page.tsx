@@ -18,7 +18,7 @@ export default async function HomePage({
   const hotProduct = await getProductsFetch({ order: "reviewCount" });
   const starProduct = await getProductsFetch({ order: "rating" });
 
-  const sp = await searchParams;
+  const sp = searchParams ?? {};
 
   return (
     <div className="relative">
