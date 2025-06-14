@@ -13,6 +13,7 @@ const CategoryDropDown = () => {
     setCategoryId,
   } = useModalStore();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const categoryMap: Record<string, number> = {
       음악: 1,

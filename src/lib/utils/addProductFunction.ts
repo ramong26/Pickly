@@ -17,7 +17,6 @@ interface Props {
   setImage: (image: string | null) => void;
   setCategoryId: (id: number | null) => void;
   setClickedValue: (val: string) => void;
-  image: string | null;
 }
 
 export const handleSubmit = async ({
@@ -35,7 +34,6 @@ export const handleSubmit = async ({
   setImage,
   setCategoryId,
   setClickedValue,
-  image,
 }: Props) => {
   // 모달에 내용을 한개라도 안 썼을 경우 경고 모달 띄우기
   if (!name || !categoryId || !description || !file) {
