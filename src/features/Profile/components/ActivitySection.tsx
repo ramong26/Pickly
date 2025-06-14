@@ -1,3 +1,4 @@
+"use client";
 import CategoryChip from "@/components/CategoryChip";
 import ActivityCard from "./ActivityCard";
 import { User } from "@/features/Profile/types/user";

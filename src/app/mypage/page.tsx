@@ -1,3 +1,4 @@
+import React, { Suspense } from "react";
 import Header from "@/components/shared/Header";
 import { getMyProfile } from "@/features/Profile/api/getMyProfile";
 import { getUserProducts } from "@/features/Profile/api/getUserProducts";
@@ -23,11 +24,13 @@ export default async function MyPage() {
             활동 내역
           </span>
           <ActivitySection user={user} />
-          <ProductTabSection
-            userId={user.id}
-            initialTab="reviewed"
-            initialProducts={initialProducts}
-          />
+          <Suspense fallback={<div>로딩중...</div>}>
+            <ProductTabSection
+              userId={user.id}
+              initialTab="reviewed"
+              initialProducts={initialProducts}
+            />
+          </Suspense>
         </div>
       </div>
     </>
