@@ -26,7 +26,6 @@ export interface ProductList {
   createdAt: string;
   updatedAt: string;
 }
-[];
 
 export interface ProductInfo {
   id: number;
