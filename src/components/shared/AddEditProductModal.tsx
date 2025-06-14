@@ -193,7 +193,6 @@ const AddEditProductModal = ({
                 setImage,
                 setCategoryId,
                 setClickedValue,
-                image,
               });
             }
             // else 부분 없음 -> editProductFunction 호출 안 함
