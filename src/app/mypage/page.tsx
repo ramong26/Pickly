@@ -1,0 +1,35 @@
+import Header from "@/components/shared/Header";
+import { getMyProfile } from "@/features/Profile/api/getMyProfile";
+import { getUserProducts } from "@/features/Profile/api/getUserProducts";
+import ActivitySection from "@/features/Profile/components/ActivitySection";
+import ProductTabSection from "@/features/Profile/components/ProductTabSection";
+
+import ProfileCard from "@/features/Profile/components/ProfileCard";
+
+export default async function MyPage() {
+  const user = await getMyProfile();
+  const initialProducts = await getUserProducts(user.id, "reviewed");
+  // console.log(user);
+
+  return (
+    <>
+      <Header />
+      <div className="mt-[40px] px-[20px] height: 100vh; md:px-[117px] lg:mx-auto lg:px-0 lg:flex lg:justify-center lg:gap-[70px] max-w-[1340px] ">
+        <div className="h-auto">
+          <ProfileCard user={user} isMe={true} />
+        </div>
+        <div className="w-full flex flex-col mb-[60px]">
+          <span className="text-[#F1F1F5] font-semibold text-[18px] lg:text-[20px]">
+            활동 내역
+          </span>
+          <ActivitySection user={user} />
+          <ProductTabSection
+            userId={user.id}
+            initialTab="reviewed"
+            initialProducts={initialProducts}
+          />
+        </div>
+      </div>
+    </>
+  );
+}
