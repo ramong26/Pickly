@@ -4,7 +4,13 @@ import { useQuery } from "@tanstack/react-query";
 export default async function getMusicvideo(
   searchQuery: string
 ): Promise<YoutubeVideo[]> {
-  const url = `/api/14-6/youtube-search?q=${encodeURIComponent(
+  const baseUrl =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000"
+      : process.env.NEXT_PUBLIC_BASE_URL || "https://mogazoa-api.vercel.app";
+
+  const apiPath = "/api/14-6/youtube-search";
+  const url = `${baseUrl}${apiPath}?q=${encodeURIComponent(
     searchQuery
   )}&maxResults=1&type=video&order=viewCount`;
 
@@ -24,7 +30,6 @@ export default async function getMusicvideo(
     throw error;
   }
 }
-
 // 배포할 때 ssr로 해야함
 // 클라이언트에서만 사용하는 캐싱용 훅
 export function useYouTubeQuery(searchQuery: string) {

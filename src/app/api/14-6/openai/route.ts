@@ -5,6 +5,7 @@ export async function POST(request: Request) {
   console.log("POST /api/14-6/openai 호출됨");
   try {
     const { text } = await request.json();
+    console.log("요청받은 text:", text);
     if (!text) {
       return NextResponse.json(
         { error: "Missing text in request body" },
