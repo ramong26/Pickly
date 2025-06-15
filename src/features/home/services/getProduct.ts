@@ -39,6 +39,7 @@ export async function getProductsFetch({
   cursor,
 }: Props): Promise<Product> {
   const params: Record<string, unknown> = {};
+  console.log("Base_URL:", Base_URL);
   if (keyword) params.keyword = keyword;
   if (categoryId) params.category = categoryId;
   if (order) params.order = order;
