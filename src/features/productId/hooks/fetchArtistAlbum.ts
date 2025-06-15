@@ -4,7 +4,8 @@ export default async function fetchArtistAlbum(text: string) {
   const baseUrl =
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
-      : process.env.NEXT_PUBLIC_BASE_URL || "https://mogazoa-api.vercel.app";
+      : process.env.NEXT_PUBLIC_BASE_URL ||
+        "https://teste-fms0t56na-ramong23s-projects.vercel.app";
 
   const apiPath = "/api/14-6/openai";
 
