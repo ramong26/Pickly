@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/14-6/api/:path*", "destination": "/api/14-6/:path*" }
+  ]
+}
