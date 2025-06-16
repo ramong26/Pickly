@@ -26,6 +26,7 @@ export default async function fetchArtistAlbum(text: string) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
     },
     body: JSON.stringify({ text }),
   });
