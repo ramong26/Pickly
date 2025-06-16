@@ -10,7 +10,7 @@ export default async function getMusicvideo(
       : process.env.NEXT_PUBLIC_BASE_URL ||
         "https://teste-fms0t56na-ramong23s-projects.vercel.app";
 
-  const apiPath = "/api/14-6/youtube-search";
+  const apiPath = "/14-6/api/youtube-search";
   const url = `${baseUrl}${apiPath}?q=${encodeURIComponent(
     searchQuery
   )}&maxResults=1&type=video&order=viewCount`;

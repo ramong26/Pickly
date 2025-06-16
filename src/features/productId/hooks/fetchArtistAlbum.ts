@@ -8,7 +8,7 @@ export default async function fetchArtistAlbum(text: string) {
       : process.env.NEXT_PUBLIC_BASE_URL ||
         "https://teste-fms0t56na-ramong23s-projects.vercel.app";
 
-  const apiPath = "/api/14-6/openai";
+  const apiPath = "/14-6/api/openai";
 
   const normalizedBaseUrl = baseUrl.endsWith("/")
     ? baseUrl.slice(0, -1)
