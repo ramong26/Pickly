@@ -1,16 +1,17 @@
-// ai에게 post 요청을 보내 아티스트와 앨범 이름을 추출하는 함수
-
 export default async function fetchArtistAlbum(text: string) {
   console.log("🔥 fetchArtistAlbum 호출됨", text);
 
   const baseUrl =
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
-      : process.env.NEXT_PUBLIC_BASE_URL ||
-        "https://teste-fms0t56na-ramong23s-projects.vercel.app";
+      : process.env.NEXT_PUBLIC_API_BASE_URL!; // 여기 수정
 
   console.log("NODE_ENV:", process.env.NODE_ENV);
   console.log("NEXT_PUBLIC_BASE_URL:", process.env.NEXT_PUBLIC_BASE_URL);
+  console.log(
+    "NEXT_PUBLIC_API_BASE_URL:",
+    process.env.NEXT_PUBLIC_API_BASE_URL
+  );
   console.log("baseUrl:", baseUrl);
 
   const apiPath = "/14-6/api/openai";

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export async function getMyProfile() {
-  const Base_URL = process.env.NEXT_PUBLIC_BASE_URL;
+  const Base_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   if (!Base_URL) {
     throw new Error("NEXT_PUBLIC_BASE_URL is not defined");

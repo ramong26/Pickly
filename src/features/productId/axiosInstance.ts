@@ -3,7 +3,7 @@ import { getCookie } from "cookies-next";
 
 const axiosInstance = axios.create({
   baseURL:
-    process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000/api/proxy",
+    process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3000/api/proxy",
   headers: {
     Accept: "application/json",
   },

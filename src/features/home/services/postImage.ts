@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const Base_URL = process.env.NEXT_PUBLIC_BASE_URL;
+const Base_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 interface Props {
   file: File | null;
