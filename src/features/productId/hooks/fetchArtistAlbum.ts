@@ -1,6 +1,7 @@
 // ai에게 post 요청을 보내 아티스트와 앨범 이름을 추출하는 함수
 
 export default async function fetchArtistAlbum(text: string) {
+  console.log("🔥 fetchArtistAlbum 호출됨", text);
   const baseUrl =
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000"

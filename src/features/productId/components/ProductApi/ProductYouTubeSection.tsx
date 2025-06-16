@@ -4,7 +4,7 @@ import { useYouTubeQuery } from "@/features/productId/hooks/useGetMusicvideo";
 
 export default function ProductYouTubeSection({ query }: { query: string }) {
   const { data: videos } = useYouTubeQuery(query);
-
+  console.log("YouTube API 결과:", videos);
   if (!videos || videos.length === 0)
     return (
       <div className="animate-pulse">
@@ -18,6 +18,7 @@ export default function ProductYouTubeSection({ query }: { query: string }) {
           <iframe
             src={`https://www.youtube.com/embed/${video.id.videoId}`}
             title={video.snippet.title}
+            allow="autoplay; encrypted-media"
             className="rounded-xl lg:w-[620px] md:w-[460px] lg:h-[350px] md:h-[260px] w-[330px] h-[190px] "
             allowFullScreen
           />
