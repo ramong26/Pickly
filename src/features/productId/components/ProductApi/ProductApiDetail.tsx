@@ -9,6 +9,7 @@ import LazyLoadSection from "../ProductIdDetail/LazyLoadSection";
 import { GetProductIdDetail } from "@/features/productId/types";
 import { getMusicvideo } from "../../hooks/useGetMusicvideo";
 
+import { YoutubeVideo } from "@/features/productId/youtube-video";
 import ProductApiClient from "./ProductApiClient";
 const ProductSpotifyClient = dynamic(() => import("./ProductSpotifyClient"));
 const MapView = dynamic(() => import("./MapView"));
@@ -25,7 +26,7 @@ function parseJsonSafe(jsonStr: string) {
     }
     return JSON.parse(str);
   } catch (error) {
-    console.error("JSON 파싱 실패", error, "원본주소:", jsonStr);
+    console.error("JSON 파싱 실패", error, "원본:", jsonStr);
     return null;
   }
 }
@@ -39,11 +40,9 @@ export default async function ProductApiDetail({
   const combinedText = `${product.name}\n${product.description}`;
 
   // OpenAI API 호출 병렬처리
-  const [albumInfoRaw, placeInfoRaw, movieInfoRaw] = await Promise.all([
-    fetchArtistAlbum(combinedText),
-    fetchGoogleSearch(combinedText),
-    fetchMovieSearch(combinedText),
-  ]);
+  const albumInfoRaw = await fetchArtistAlbum(combinedText);
+  const placeInfoRaw = await fetchGoogleSearch(combinedText);
+  const movieInfoRaw = await fetchMovieSearch(combinedText);
 
   // albumInfo 파싱
   const albumInfoObj = parseJsonSafe(albumInfoRaw);
@@ -65,8 +64,21 @@ export default async function ProductApiDetail({
   const parsedMovie = movieInfoObj?.trailer ?? "";
   const categoryId = product.category?.id ?? 0;
 
-  const videos = await getMusicvideo(searchQuery);
-  const videoTrailer = await getMusicvideo(parsedMovie);
+  let videos: YoutubeVideo[] = [];
+  let videoTrailer: YoutubeVideo[] = [];
+
+  try {
+    videos = await getMusicvideo(searchQuery);
+  } catch (e) {
+    console.error("유튜브 fetch 실패 - videos:", e);
+  }
+
+  try {
+    videoTrailer = await getMusicvideo(parsedMovie);
+  } catch (e) {
+    console.error("유튜브 fetch 실패 - videoTrailer:", e);
+  }
+
   return (
     <>
       <LazyLoadSection>
