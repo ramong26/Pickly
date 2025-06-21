@@ -3,7 +3,6 @@ import React from "react";
 import { YoutubeVideo } from "../../youtube-video";
 
 interface InnerYouTubeSectionProps {
-  query?: string;
   category: number;
   initialVideos?: YoutubeVideo[];
 }
