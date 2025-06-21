@@ -11,7 +11,7 @@ import { getMusicvideo } from "../../hooks/useGetMusicvideo";
 
 import ProductApiClient from "./ProductApiClient";
 const ProductSpotifyClient = dynamic(() => import("./ProductSpotifyClient"));
-const MapView = dynamic(() => import("./MapView"), { ssr: false });
+const MapView = dynamic(() => import("./MapView"));
 
 function parseJsonSafe(jsonStr: string) {
   try {
