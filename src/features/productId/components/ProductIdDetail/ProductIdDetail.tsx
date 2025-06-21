@@ -11,9 +11,7 @@ const CopyLinkImage = dynamic(() => import("./CopyLinkImage"), { ssr: false });
 const ProductIdDetailHeart = dynamic(() => import("./ProductIdDetailHeart"), {
   ssr: false,
 });
-const ProductIdReviewButton = dynamic(() => import("./ProductIdDetailButton"), {
-  ssr: false,
-});
+import ProductIdDetailButton from "./ProductIdDetailButton";
 
 export default function ProductIdDetailClient({
   product,
@@ -30,7 +28,7 @@ export default function ProductIdDetailClient({
           height={306}
           unoptimized
           priority
-          className=" w-[306px] h-[306px] object-cover"
+          className=" lg:w-[306px] lg:h-[306px] md:w-[242px] md:h-[242px] w-[220px] h-[220px] object-contain"
         />
       </div>
 
@@ -40,7 +38,7 @@ export default function ProductIdDetailClient({
             category={product.category.name}
             className="text-[12px]"
           />
-          <CopyLinkImage />
+          <CopyLinkImage product={product} />
         </div>
 
         <div className="flex flex-col justify-between gap-[20px]">
@@ -58,7 +56,7 @@ export default function ProductIdDetailClient({
           <div className="lg:text-[16px] md:text-[14px] font-normal">
             {product.description}
           </div>
-          <ProductIdReviewButton product={product} />
+          <ProductIdDetailButton product={product} />
         </div>
       </div>
     </div>

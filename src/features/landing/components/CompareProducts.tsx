@@ -2,9 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-type Props = {};
-
-const CompareProducts = (props: Props) => {
+const CompareProducts = () => {
   return (
     <div className="flex flex-col lg:mt-[346px] md:mt-[146px] mt-[76px]">
       <motion.h1
@@ -12,7 +10,7 @@ const CompareProducts = (props: Props) => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="lg:text-[64px] md:text-[32px] text-[16px] font-extrabold text-white"
+        className="lg:text-[64px] text-[32px] font-extrabold text-white"
       >
         Compare Products
       </motion.h1>
@@ -20,7 +18,7 @@ const CompareProducts = (props: Props) => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
-        className="lg:text-[20px] md:text-[12px] text-[6px] font-medium text-[#808080] lg:w-[480px] md:w-[260px] w-[130px] lg:mt-[35px] md:mt-[10px] mt-[8px]"
+        className="lg:text-[20px] text-[12px] font-medium text-[#808080] lg:w-[480px] w-[260px] lg:mt-[35px] md:mt-[10px] mt-[8px]"
       >
         Choose products to compare features, ratings, and more. Make smarter
         decisions with side-by-side insights.

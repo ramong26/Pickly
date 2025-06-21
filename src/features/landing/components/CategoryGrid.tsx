@@ -2,31 +2,27 @@
 import React from "react";
 import { motion } from "framer-motion";
 import CategoryCard from "./CategoryCard";
-import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa6";
 
-type Props = {};
-
-const CategoryGrid = (props: Props) => {
+const CategoryGrid = () => {
   return (
-    <div className="flex flex-col md:mt-[100px] mt-[36px]">
+    <div className="flex flex-col mx-auto md:mt-[100px] mt-[36px] w-[80vw] overflow-x-hidden ">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="flex flex-row items-center justify-center"
+        className="flex md:flex-row flex-col md:items-center md:justify-center items-start justify-start"
       >
-        <h1 className="text-white lg:text-[64px] md:text-[32px] text-[16px] font-extrabold">
+        <h1 className="text-white lg:text-[64px] text-[32px] font-extrabold">
           Explore <br /> through categories
         </h1>
-        <span className="text-[#808080] ml-auto lg:text-[20px] md:text-[12px] text-[6px] font-extrabold">
+        <span className="text-[#808080] md:ml-auto md:mt-0 mt-[16px] lg:text-[20px] text-[12px] font-extrabold">
           Start your journey here. <br /> Discover products that match your
           vibe.
         </span>
       </motion.div>
 
-      <div className="grid grid-cols-3 lg:gap-[24px] gap-[16px] lg:mt-[102px] md:mt-[51px] mt-[27px] mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:gap-[24px] gap-[16px] lg:mt-[102px] md:mt-[51px] mt-[27px] mx-auto w-full">
         <CategoryCard
           category="Music"
           description="Discover the rhythm that moves you."
@@ -90,6 +86,14 @@ const CategoryGrid = (props: Props) => {
           img="/images/clothesaccessories.png"
           color="#757AFF"
           url="/homepage/의류%2F악세서리?sort=recent"
+        />
+        <CategoryCard
+          category="App"
+          description="Handpicked apps for your daily life."
+          img="/images/app.jpg"
+          color="#3098E3"
+          url="/homepage/앱?sort=recent"
+          className="md:hidden"
         />
       </div>
     </div>

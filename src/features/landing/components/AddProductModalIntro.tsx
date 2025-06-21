@@ -2,9 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-type Props = {};
-
-const AddProductModalIntro = (props: Props) => {
+const AddProductModalIntro = () => {
   return (
     <div className="flex md:flex-row flex-col items-center lg:mt-[220px] md:mt-[140px] mt-[66px]">
       <motion.div
@@ -15,12 +13,12 @@ const AddProductModalIntro = (props: Props) => {
         className="flex flex-col md:hidden justify-center mr-auto"
       >
         <div className="mr-auto">
-          <h1 className="w-[65px] text-[16px] font-extrabold text-white">
+          <h1 className="w-[65px] text-[32px] font-extrabold text-white">
             Add Your Product
           </h1>
         </div>
-        <div className="w-[102px] mr-auto mt-[8px] leading-none">
-          <span className="text-[6px] font-medium text-[#808080]">
+        <div className="w-[200px] mr-auto mt-[8px] leading-none">
+          <span className="text-[12px] font-medium text-[#808080]">
             Fill out the form and share your own product to the community
           </span>
         </div>

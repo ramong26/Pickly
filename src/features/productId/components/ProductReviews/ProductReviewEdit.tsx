@@ -3,26 +3,17 @@
 import { useState, useEffect } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
-import dynamic from "next/dynamic";
 
 import { checkLoginStatus } from "@/features/productId/hooks/checkLogin";
 import { GetProductIdReviewsDetail } from "../../types";
 import { useGetProductId } from "../../hooks/useGetProductId";
 import { reviewService } from "../../api";
 
-const ProductReviewStarModal = dynamic(
-  () => import("../modal/ProductReviewModal/ProductReviewStarModal")
-);
-const ProductIdGetModal = dynamic(
-  () => import("../modal/ProductReviewModal/ProductIdGetModal")
-);
-const ProductReviewInputModal = dynamic(
-  () => import("../modal/ProductReviewModal/ProductReviewInputModal")
-);
-const ReviewBaseModal = dynamic(
-  () => import("../modal/ProductReviewModal/ReviewBaseModal")
-);
-const BaseButton = dynamic(() => import("@/components/shared/BaseButton"));
+import BaseButton from "@/components/shared/BaseButton";
+import ProductReviewStarModal from "../modal/ProductReviewModal/ProductReviewStarModal";
+import ProductIdGetModal from "../modal/ProductReviewModal/ProductIdGetModal";
+import ProductReviewInputModal from "../modal/ProductReviewModal/ProductReviewInputModal";
+import ReviewBaseModal from "../modal/ProductReviewModal/ReviewBaseModal";
 
 type ReviewImage = string | { id: number };
 
@@ -31,7 +22,6 @@ interface ProductReviewModalProps {
   setOpen: (open: boolean) => void;
   reviewId: number;
   initialReviewData: GetProductIdReviewsDetail;
-  // sort?: "recent" | "ratingDesc" | "ratingAsc" | "likeCount" | undefined;
 }
 
 export default function ProductReviewEdit({
@@ -39,8 +29,7 @@ export default function ProductReviewEdit({
   setOpen,
   reviewId,
   initialReviewData,
-}: // sort = "recent",
-ProductReviewModalProps) {
+}: ProductReviewModalProps) {
   const queryClient = useQueryClient();
   const [accessToken, setAccessToken] = useState<string | null>(null);
   const [reviewText, setReviewText] = useState(initialReviewData.content);
@@ -113,9 +102,9 @@ ProductReviewModalProps) {
       modalClassName="custom-modal-class"
       contentClassName="custom-content-class"
     >
-      <div className="w-full h-full flex gap-[40px] flex-col justify-between">
+      <div className="lg:w-full md:w-[510px] lg:h-full md:h-[552px] flex md:gap-[40px] gap-[20px] flex-col justify-between">
         <ProductIdGetModal />
-        <div className="flex flex-col gap-[20px] min-h-[330px]">
+        <div className="flex flex-col md:gap-[20px] gap-[10px] ">
           {/* 별점 입력 모달 */}
           <ProductReviewStarModal onChange={setRating} initialRating={rating} />
           {/* 리뷰 내용 입력 모달 */}
@@ -130,7 +119,7 @@ ProductReviewModalProps) {
           />
         </div>
         <BaseButton
-          className="py-[22px] text-[18px] font-semibold"
+          className="lg:py-[22px] md:py-[18px]  py-[15px]  text-[18px] font-semibold"
           disabled={!isSubmitEnabled}
           onClick={handleSubmit}
         >
