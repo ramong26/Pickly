@@ -32,12 +32,12 @@ export async function getMusicvideo(
 }
 // 배포할 때 ssr로 해야함
 // 클라이언트에서만 사용하는 캐싱용 훅
-export function useYouTubeQuery(searchQuery: string) {
-  return useQuery({
-    queryKey: ["youtube-video", searchQuery],
-    queryFn: () => getMusicvideo(searchQuery),
-    staleTime: 1000 * 60 * 5,
+// export function useYouTubeQuery(searchQuery: string) {
+//   return useQuery({
+//     queryKey: ["youtube-video", searchQuery],
+//     queryFn: () => getMusicvideo(searchQuery),
+//     staleTime: 1000 * 60 * 5,
 
-    enabled: !!searchQuery,
-  });
-}
+//     enabled: !!searchQuery,
+//   });
+// }
