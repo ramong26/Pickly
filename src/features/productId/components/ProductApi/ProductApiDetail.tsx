@@ -25,7 +25,7 @@ function parseJsonSafe(jsonStr: string) {
     }
     return JSON.parse(str);
   } catch (error) {
-    console.error("JSON 파싱 실패", error, "원본:", jsonStr);
+    console.error("JSON 파싱 실패", error, "원본주소:", jsonStr);
     return null;
   }
 }
