@@ -9,7 +9,9 @@ export default function MapByPlace({ place }: { place: string }) {
 
     libraries: ["places"],
   });
-  console.log(process.env.GOOGLE_API_KEY);
+  if (!process.env.NEXT_PUBLIC_GOOGLE_API_KEY) {
+    throw new Error("NEXT_PUBLIC_GOOGLE_API_KEY is not defined");
+  }
   const [position, setPosition] = useState<{ lat: number; lng: number } | null>(
     null
   );

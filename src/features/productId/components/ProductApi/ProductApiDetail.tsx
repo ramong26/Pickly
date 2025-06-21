@@ -11,7 +11,7 @@ import { getMusicvideo } from "../../hooks/useGetMusicvideo";
 
 import ProductApiClient from "./ProductApiClient";
 const ProductSpotifyClient = dynamic(() => import("./ProductSpotifyClient"));
-const MapView = dynamic(() => import("./MapView"));
+const MapView = dynamic(() => import("./MapView"), { ssr: false });
 
 function parseJsonSafe(jsonStr: string) {
   try {
@@ -86,7 +86,7 @@ export default async function ProductApiDetail({
             </div>
           </div>
         )}
-        {(categoryId === 4 || categoryId === 6) && (
+        {(categoryId === 4 || categoryId === 6) && parsedPlace && (
           <div>
             <MapView place={parsedPlace} />
           </div>
