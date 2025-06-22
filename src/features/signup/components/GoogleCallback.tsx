@@ -16,11 +16,11 @@ const base64UrlDecode = (str: string) => {
 export default function GoogleCallback() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const Base_URL = process.env.NEXT_PUBLIC_BASE_URL;
+  const Base_URL = process.env.BASE_URL;
   const code = searchParams.get("code");
 
   const redirectUri = process.env.NEXT_PUBLIC_GOOGLE_REDIRECT_URI ?? "";
-
+  console.log("Google Redirect URI:", redirectUri);
   const { mutate: oAuthLogin } = useOAuthLoginMutation({
     onSuccess: (data) => {
       toast.success(`${data.user.nickname}님, 로그인 성공!`);
@@ -30,7 +30,7 @@ export default function GoogleCallback() {
       toast.error("로그인 실패 😢");
     },
   });
-
+  console.log("✅ 현재 URL에서 code:", code);
   useEffect(() => {
     if (!code) return;
 
