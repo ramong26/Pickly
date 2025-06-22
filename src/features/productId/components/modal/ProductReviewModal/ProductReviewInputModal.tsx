@@ -3,12 +3,11 @@ import { useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import toast from "react-hot-toast";
 
-import { TextboxReview } from "./TextboxReview";
+import { Textbox } from "@/components/input/Textbox";
 import { imageService } from "@/features/productId/api";
-import { checkLoginStatus } from "@/features/productId/hooks/checkLogin";
-
 import ImageDelete from "../../../../../../public/icons/image-delete.png";
 import PlusImage from "../../../../../../public/icons/plus-image.png";
+import { checkLoginStatus } from "@/features/productId/hooks/checkLogin";
 
 interface ImageData {
   id: string;
@@ -119,13 +118,13 @@ export default function ProductReviewInputModal({
   return (
     <div className="flex flex-col lg:gap-[20px] md:gap-[15px] gap-[10px]">
       {/* 텍스트 입력 나중에 컴포넌트로 교체예쩡 텍스트필드 오류 있음 */}
-      <TextboxReview
+      <Textbox
+        size="S"
         placeholder="리뷰를 입력해주세요"
         value={text}
         onChange={handleTextChange}
         maxLength={500}
-        showCharCount={true}
-        className="md:h-[150px] h-[120px] lg:w-[540px] md:w-[510px] w-[295px] text-[16px]"
+        className="md:h-[150px] h-[120px] lg:w-[540px] md:w-[510px] w-[295px]  text-[16px]"
       />
 
       {/* 이미지 업로드 섹션 */}

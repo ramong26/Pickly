@@ -23,7 +23,7 @@ const KAKAO_REDIRECT_URI = process.env.NEXT_PUBLIC_KAKAO_REDIRECT_URI;
 const SignUpPage = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const error = searchParams.get('error');
+  const error = searchParams.get("error");
 
   const { mutate: signUp } = useSignUp({
     onSuccess: (data: AuthResponse) => {
@@ -32,7 +32,7 @@ const SignUpPage = () => {
         router.replace("/signin");
       }, 1000);
     },
-    onError: (error:  AxiosError | any) => {
+    onError: (error: AxiosError | any) => {
       toast.error(
         error?.response?.data?.message ||
           "회원가입에 실패했습니다. 다시 시도해 주세요."
@@ -53,10 +53,11 @@ const SignUpPage = () => {
     signUp(data);
   };
 
-  if (error === 'oauth') {
-    return <ErrorPage/>;
+  if (error === "oauth") {
+    return <ErrorPage />;
   }
-  
+  const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${GOOGLE_CLIENT_ID}&redirect_uri=${GOOGLE_REDIRECT_URI}&response_type=code&scope=email%20profile`;
+  console.log("Google Auth URL:", googleAuthUrl);
   return (
     <>
       <div
@@ -65,7 +66,7 @@ const SignUpPage = () => {
         <div className="max-w-[440px] md:max-w-[640px] w-full pt-[93px] pb-[93px] mx-auto min-h-[100dvh] flex justify-center items-center">
           <div className="w-full px-[20px] lg:px-[0px]">
             <div className="flex justify-center items-center mb-[25px]">
-              <Link href="/" >
+              <Link href="/">
                 <Image
                   src={login_logo}
                   width={193}
@@ -129,16 +130,25 @@ const SignUpPage = () => {
               </BaseButton>
             </form>
             <div className="text-[var(--color-deepGray)] mt-[40px] text-center text-base">
-              <span>이미 회원이신가요? <Link href="/signin" className="hover:text-[var(--color-white)]">로그인</Link></span>
+              <span>
+                이미 회원이신가요?{" "}
+                <Link
+                  href="/signin"
+                  className="hover:text-[var(--color-white)]"
+                >
+                  로그인
+                </Link>
+              </span>
             </div>
-            {/* <div className="text-[var(--color-deepGray)] mt-[20px] text-center text-base">
+            <div className="text-[var(--color-deepGray)] mt-[20px] text-center text-base">
               <ul className="flex justify-center gap-5 mt-[19px]">
                 <li>
                   <Link
                     href={googleAuthUrl}
                     className="group relative block border border-[#353542] rounded-full  hover:bg-[var(--color-white)] hover:scale-110 transition-transform duration-200 ease-in-out shadow-lg"
                   >
-                    <span className="
+                    <span
+                      className="
                       block 
                       bg-[var(--color-deepGray)] 
                       h-[56px] w-[56px] 
@@ -148,7 +158,8 @@ const SignUpPage = () => {
                       mask-no-repeat 
                       mask-center 
                       hover:bg-[url('/sns_gg_bg.png')] bg-cover bg-center bg-no-repeat 
-                      text-[0px]">
+                      text-[0px]"
+                    >
                       구글 회원가입
                     </span>
                     <span className="absolute group-hover:last:block hidden -bottom-[30px] left-1/2 translate-x-[-50%] text-[var(--color-deepGray)] text-[14px] whitespace-nowrap">
@@ -157,10 +168,7 @@ const SignUpPage = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href={kakaoLoginUrl}
-                    className="group relative block border border-[#353542] rounded-full hover:bg-[#f3e21f]  hover:scale-110 transition-transform duration-200 ease-in-out shadow-lg"
-                  >
+                  <div className="group relative block border border-[#353542] rounded-full hover:bg-[#f3e21f]  hover:scale-110 transition-transform duration-200 ease-in-out shadow-lg">
                     <span
                       className="
                       block 
@@ -179,22 +187,28 @@ const SignUpPage = () => {
                     <span className="absolute group-hover:last:block hidden -bottom-[30px] left-1/2 translate-x-[-50%] text-[var(--color-deepGray)] text-[14px] whitespace-nowrap">
                       카카오톡 회원가입
                     </span>
-                  </Link>
+                  </div>
                 </li>
               </ul>
               <ul className="flex justify-center gap-5 mt-[50px]">
                 <li>
-                  <Link href="/privacy" className="hover:underline text-[16px] text-[var(--color-deepGray)]">
+                  <Link
+                    href="/privacy"
+                    className="hover:underline text-[16px] text-[var(--color-deepGray)]"
+                  >
                     <span>개인정보처리방침</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/terms" className="hover:underline text-[16px] text-[var(--color-deepGray)]">
+                  <Link
+                    href="/terms"
+                    className="hover:underline text-[16px] text-[var(--color-deepGray)]"
+                  >
                     <span>서비스 이용약관</span>
                   </Link>
                 </li>
-              </ul> 
-            </div> */}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
