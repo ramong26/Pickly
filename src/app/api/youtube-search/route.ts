@@ -57,8 +57,7 @@ export async function GET(req: NextRequest) {
     };
 
     // DB에 저장
-    const created = await YoutubeVideoModel.create({ query, videoData });
-    console.log("✅ 저장 완료", created);
+    await YoutubeVideoModel.create({ query, videoData });
 
     return NextResponse.json({ items: [videoData] });
   } catch (error) {
