@@ -26,8 +26,6 @@ export default function OAuthSignUpPage() {
       ? process.env.NEXT_PUBLIC_GOOGLE_REDIRECT_URI
       : process.env.NEXT_PUBLIC_KAKAO_REDIRECT_URI;
 
-  console.log("provider:", provider);
-  console.log("email:", email);
   const {
     register,
     handleSubmit,
@@ -38,7 +36,6 @@ export default function OAuthSignUpPage() {
   });
 
   const onSubmit: SubmitHandler<SimpleJoinForm> = async (data) => {
-    console.log("Form Data:", data);
     // 여기서 백엔드 API 호출하여 회원가입 처리
 
     try {
