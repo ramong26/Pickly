@@ -12,7 +12,7 @@ interface InnerYouTubeSectionProps {
         title: string;
         thumbnail?: string;
         publishedAt?: string;
-      }>; // MongoDB 캐시 형태 포함 가능
+      }>;
 }
 
 export default function ProductYouTubeSection({
