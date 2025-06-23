@@ -29,19 +29,16 @@ export default function ProductYouTubeSection({
     );
   }
 
-  // videoId와 title 추출용 헬퍼 함수
   function getVideoId(video: any): string | undefined {
-    // API 원본 데이터 형태: video.id.videoId
     if (video?.id?.videoId) return video.id.videoId;
-    // 캐시 데이터 형태: video.videoId
+
     if (video?.videoId) return video.videoId;
     return undefined;
   }
 
   function getTitle(video: any): string | undefined {
-    // API 원본 데이터 형태: video.snippet.title
     if (video?.snippet?.title) return video.snippet.title;
-    // 캐시 데이터 형태: video.title
+
     if (video?.title) return video.title;
     return undefined;
   }
