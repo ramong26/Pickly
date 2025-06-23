@@ -3,7 +3,7 @@ import { useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import toast from "react-hot-toast";
 
-import { TextboxReview } from "@/features/productId/components/modal/TextboxReview";
+import { TextboxReview } from "@/features/productId/components/modal/ProductReviewModal/TextboxReview";
 import { imageService } from "@/features/productId/api";
 import ImageDelete from "../../../../../../public/icons/image-delete.png";
 import PlusImage from "../../../../../../public/icons/plus-image.png";
