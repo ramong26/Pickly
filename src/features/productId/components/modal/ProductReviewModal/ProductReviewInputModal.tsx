@@ -3,7 +3,7 @@ import { useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import toast from "react-hot-toast";
 
-import { Textbox } from "@/components/input/Textbox";
+import { TextboxReview } from "@/features/productId/components/modal/TextboxReview";
 import { imageService } from "@/features/productId/api";
 import ImageDelete from "../../../../../../public/icons/image-delete.png";
 import PlusImage from "../../../../../../public/icons/plus-image.png";
@@ -118,7 +118,7 @@ export default function ProductReviewInputModal({
   return (
     <div className="flex flex-col lg:gap-[20px] md:gap-[15px] gap-[10px]">
       {/* 텍스트 입력 나중에 컴포넌트로 교체예쩡 텍스트필드 오류 있음 */}
-      <Textbox
+      <TextboxReview
         size="S"
         placeholder="리뷰를 입력해주세요"
         value={text}
