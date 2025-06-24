@@ -1,7 +1,7 @@
 "use client";
 import BaseButton from "@/components/shared/BaseButton";
 import { useRouter } from "next/navigation";
-import abnormal from "@/public/animations/Abnormal.json";
+import abnormal from "@/../public/animations/Abnormal.json";
 import Lottie from "lottie-react";
 
 export default function ErrorPage() {
