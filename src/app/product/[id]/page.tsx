@@ -56,10 +56,10 @@ export default async function ProductIdPage({ params }: PageProps) {
 
         <ProductStatsClient product={productDetail} />
         {/* <ProductReviewsFetch
-            productId={productId}
-            initialData={initialData}
-            initialOrder="recent"
-          />  */}
+          productId={productId}
+          initialData={initialData}
+          initialOrder="recent"
+        /> */}
       </div>
     </HydrationBoundary>
   );
