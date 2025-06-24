@@ -1,13 +1,15 @@
 "use client";
 import { useEffect } from "react";
-import dynamic from "next/dynamic";
-import { useProductIDStatsStore } from "../../libs/useProductStatsStore";
 
+import ProductIdStatsBone from "./ProductIdStatsBone";
+
+import { useProductIDStatsStore } from "../../libs/useProductStatsStore";
 import { GetProductIdDetail } from "../../types";
-import Heart from "../../../../../public/icons/Heart.png";
-import Star from "../../../../../public/icons/star.svg";
-import Talk from "../../../../../public/icons/Talk.png";
-const ProductIdStatsBone = dynamic(() => import("./ProductIdStatsBone"));
+
+import Heart from "@/../public/icons/Heart.png";
+import Star from "@/../public/icons/star.svg";
+import Talk from "@/../public/icons/Talk.png";
+
 export default function ProductStatsClient({
   product,
 }: {
@@ -17,7 +19,6 @@ export default function ProductStatsClient({
     rating,
     reviewCount,
     favoriteCount,
-    // isFavorite,
     setRating,
     setReviewCount,
     setFavoriteCount,
@@ -27,7 +28,6 @@ export default function ProductStatsClient({
   const currentRating = rating[product.id];
   const currentReviewCount = reviewCount[product.id];
   const currentFavoriteCount = favoriteCount[product.id];
-  // const currentIsFavorite = isFavorite[product.id];
 
   useEffect(() => {
     if (

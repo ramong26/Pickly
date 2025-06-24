@@ -1,13 +1,8 @@
-"use client";
-
-import dynamic from "next/dynamic";
-
 import CategoryChip from "@/components/CategoryChip";
 import { GetProductIdDetail } from "../../types";
 import Image from "next/image";
 
-const CopyLinkImage = dynamic(() => import("./CopyLinkImage"), { ssr: false });
-
+import CopyLinkImage from "./CopyLinkImage";
 import ProductIdDetailHeart from "./ProductIdDetailHeart";
 import ProductIdDetailButton from "./ProductIdDetailButton";
 
