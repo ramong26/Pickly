@@ -42,7 +42,7 @@ export default function ProductYouTubeSection({
     if (video?.title) return video.title;
     return undefined;
   }
-  console.log("YouTube API 응답 videos:", videos);
+
   if (category === 1) {
     return (
       <div className="w-full">

@@ -6,7 +6,6 @@ import { NextRequest, NextResponse } from "next/server";
 import axios from "axios";
 
 export async function GET(req: NextRequest) {
-  console.log("📌 [API 시작] /api/youtube-search 진입");
   const { searchParams } = new URL(req.url);
   const query = searchParams.get("q");
 
@@ -19,12 +18,10 @@ export async function GET(req: NextRequest) {
 
   try {
     await connectToDB();
-    console.log("✅ MongoDB 연결됨");
 
     // 캐시 먼저 확인
     const cached = await YoutubeVideoModel.findOne({ query });
     if (cached) {
-      console.log("📦 캐시에서 검색 결과 반환");
       return NextResponse.json({ items: [cached.videoData] });
     }
 
