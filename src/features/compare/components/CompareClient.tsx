@@ -2,7 +2,7 @@
 import { Suspense } from "react";
 
 import CompareProductForm from "@/features/compare/components/CompareProductForm";
-import LoadingClient from "@/app/compare/loadingClient";
+import LoadingClient from "@/app/compare/loading";
 
 export default function CompareClient() {
   return (

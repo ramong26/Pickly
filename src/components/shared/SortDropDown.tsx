@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
-import SortArrow from "../../../public/icons/sort-arrow.png";
+import SortArrow from "@/public/icons/sort-arrow.png";
 
 interface OptionType {
   name: string;

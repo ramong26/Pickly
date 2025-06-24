@@ -1,18 +1,19 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { toast } from "react-hot-toast";
+import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
-import defaultProfileImage from "../../../../public/defaultProfileImage.jpeg";
-import closeButton from "@../../../public/closeButton.png";
+
+import defaultProfileImage from "@/public/icons/defaultProfileImage.jpeg";
+import closeButton from "@/public/icons/close-x.png";
+
 import BaseButton from "@/components/shared/BaseButton";
 import ImageUpload from "./ImageUpload";
 import { updateMyProfile } from "../api/updateMyProfile";
 import { getMyProfile } from "../api/getMyProfile";
 import { uploadProfileImage } from "../api/uploadImage";
 import ModalPortal from "./ModalPortal";
-import { motion, AnimatePresence } from "framer-motion";
 
 const DEFAULT_IMAGE_URL = defaultProfileImage.src;
 

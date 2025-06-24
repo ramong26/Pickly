@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { TabKo } from "./ProductTabSection";
 import Image from "next/image";
-import SortArrow from "../../../../public/icons/sort-arrow.png";
+import SortArrow from "@/public/icons/sort-arrow.png";
 
 interface ProductTabDropdownProps {
   options: TabKo[];

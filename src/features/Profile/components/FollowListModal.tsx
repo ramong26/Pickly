@@ -2,12 +2,15 @@
 
 import { useEffect, useRef, useState } from "react";
 import apiInstance from "@/lib/axios";
-import Image from "next/image";
-import closeButton from "@../../../public/closeButton.png";
 import { createPortal } from "react-dom";
 import { useInView } from "react-intersection-observer";
-import defaultProfileImage from "@../../../public/defaultProfileImage.jpeg";
+import Image from "next/image";
 import Link from "next/link";
+
+import closeButton from "@/public/icons/close-x.png";
+
+import defaultProfileImage from "@/public/icons/defaultProfileImage.jpeg";
+
 export interface UserSummary {
   id: number;
   nickname: string;

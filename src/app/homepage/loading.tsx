@@ -1,12 +1,10 @@
 "use client";
 import Lottie from "lottie-react";
-import paperplane from "@/../public/animations/paperplane.json";
+import paperplane from "@/public/animations/paperplane.json";
 import React from "react";
 import { usePathname } from "next/navigation";
 
-type Props = {};
-
-const Loading = (props: Props) => {
+const Loading = () => {
   const pathname = usePathname();
 
   // 동적 라우팅일 경우 로딩 페이지 숨김

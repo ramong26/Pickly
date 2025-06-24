@@ -1,9 +1,11 @@
+import Image from "next/image";
+
 import { useUserProducts } from "../hook/useUserProducts";
 import { Product, ProductTabType } from "../types/user";
 import { ProductList } from "@/features/home/types/productType";
 import ProductCard from "@/components/shared/ProductCard";
-import logo from "../../../../public/icons/logo.png";
-import Image from "next/image";
+import logo from "@/public/icons/favicon.png";
+
 interface Props {
   userId: number;
   type: ProductTabType;

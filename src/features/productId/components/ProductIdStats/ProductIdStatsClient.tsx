@@ -4,9 +4,9 @@ import dynamic from "next/dynamic";
 import { useProductIDStatsStore } from "../../libs/useProductStatsStore";
 
 import { GetProductIdDetail } from "../../types";
-import Heart from "../../../../../public/icons/Heart.png";
-import Star from "../../../../../public/icons/star.svg";
-import Talk from "../../../../../public/icons/Talk.png";
+import Heart from "@/public/icons/heart-active.svg";
+import Star from "@/public/icons/star-icon.png";
+import Talk from "@/public/icons/Talk.png";
 const ProductIdStatsBone = dynamic(() => import("./ProductIdStatsBone"));
 export default function ProductStatsClient({
   product,

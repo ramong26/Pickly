@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const MONGODB_URI = process.env.MONGODB_URI!;
-console.log(process.env.MONGODB_URI);
+
 if (!MONGODB_URI) {
   throw new Error(" MONGODB_URI 환경변수가 설정되지 않았습니다.");
 }

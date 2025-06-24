@@ -1,14 +1,15 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import closeButton from "@../../../public/closeButton.png";
-import revertButton from "@../../../public/RevertButton.png";
-import defaultProfileImage from "@../../../public/defaultProfileImage.jpeg";
-import addImage from "@../../../public/addImage.svg";
-import { uploadProfileImage } from "../api/uploadImage";
 import toast from "react-hot-toast";
+
+import closeButton from "@/public/icons/close-x.png";
+import revertButton from "@/public/icons/sort-arrow.png";
+import defaultProfileImage from "@/public/icons/defaultProfileImage.jpeg";
+import addImage from "@/public/icons/addImage.svg";
+
+import { uploadProfileImage } from "../api/uploadImage";
 
 const DEFAULT_IMAGE_URL = defaultProfileImage.src;
 

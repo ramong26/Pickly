@@ -5,8 +5,8 @@ import toast from "react-hot-toast";
 
 import { TextboxReview } from "@/features/productId/components/modal/ProductReviewModal/TextboxReview";
 import { imageService } from "@/features/productId/api";
-import ImageDelete from "../../../../../../public/icons/image-delete.png";
-import PlusImage from "../../../../../../public/icons/plus-image.png";
+import ImageDelete from "@/public/icons/close-x.png";
+import PlusImage from "@/public/icons/plus-image.png";
 import { checkLoginStatus } from "@/features/productId/hooks/checkLogin";
 
 interface ImageData {

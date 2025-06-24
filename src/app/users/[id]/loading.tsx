@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Lottie from "lottie-react";
-import paperplane from "@/../public/animations/paperplane.json";
+import paperplane from "@/public/animations/paperplane.json";
 
 const Loading = () => {
   return (
