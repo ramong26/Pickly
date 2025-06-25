@@ -26,7 +26,6 @@ export default function ProductReviewsInfinite({
   order,
 }: ProductIdReviewProps) {
   const ref = useRef(null);
-  console.log("initialData", initialData);
   // useInfiniteQuery를 사용하여 무한 스크롤 구현
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
     useInfiniteQuery<

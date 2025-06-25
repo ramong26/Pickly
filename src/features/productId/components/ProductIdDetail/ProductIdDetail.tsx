@@ -19,7 +19,6 @@ export default function ProductIdDetailClient({
           alt="상품 이미지"
           width={306}
           height={306}
-          unoptimized
           priority
           className=" lg:w-[306px] lg:h-[306px] md:w-[242px] md:h-[242px] w-[220px] h-[220px] object-contain"
         />

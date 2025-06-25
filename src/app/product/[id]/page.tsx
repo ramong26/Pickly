@@ -1,9 +1,4 @@
 import { Metadata } from "next";
-import {
-  dehydrate,
-  QueryClient,
-  HydrationBoundary,
-} from "@tanstack/react-query";
 
 import { productService } from "@/features/productId/api";
 
@@ -28,40 +23,22 @@ export default async function ProductIdPage({ params }: PageProps) {
     "recent"
   );
 
-  // 리액트 쿼리 클라이언트 생성 및 데이터 사전 가져오기
-  const queryClient = new QueryClient();
-  await queryClient.prefetchQuery({
-    queryKey: ["product", productId],
-    queryFn: () =>
-      productService.getProductsId(productId).then((res) => res.data),
-  });
-  await queryClient.prefetchQuery({
-    queryKey: ["reviews", productId, "recent"],
-    queryFn: () =>
-      productService
-        .getProductsIdReviews(productId, "recent")
-        .then((res) => res.data),
-  });
-
   const initialData = productReviews.data;
   const productDetail = product.data;
 
   return (
-    <HydrationBoundary state={dehydrate(queryClient)}>
-      <div className="lg:w-[940px] mx-auto  lg:mb-[120px] lg:my-[160px] md:w-[684px] w-[335px] md:mt-[140px] md:mb-[147px] mt-[130px] mb-[200px] flex flex-col gap-[60px]">
-        <ProductIdDetailServer product={productDetail} />
-        {[1, 2, 4, 6].includes(productDetail.category?.id ?? 0) && (
-          <ProductApiDetail product={productDetail} />
-        )}
-
-        <ProductStatsClient product={productDetail} />
-        {/* <ProductReviewsFetch
-          productId={productId}
-          initialData={initialData}
-          initialOrder="recent"
-        /> */}
-      </div>
-    </HydrationBoundary>
+    <div className="lg:w-[940px] mx-auto  lg:mb-[120px] lg:my-[160px] md:w-[684px] w-[335px] md:mt-[140px] md:mb-[147px] mt-[130px] mb-[200px] flex flex-col gap-[60px]">
+      <ProductIdDetailServer product={productDetail} />
+      {[1, 2, 4, 6].includes(productDetail.category?.id ?? 0) && (
+        <ProductApiDetail product={productDetail} />
+      )}
+      <ProductStatsClient product={productDetail} />
+      <ProductReviewsFetch
+        productId={productId}
+        initialData={initialData}
+        initialOrder="recent"
+      />
+    </div>
   );
 }
 

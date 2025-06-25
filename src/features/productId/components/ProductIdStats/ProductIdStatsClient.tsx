@@ -58,9 +58,9 @@ export default function ProductStatsClient({
 
       {isLoading ? (
         <div className="flex justify-between align-center md:flex-row flex-col gap-[15px] w-full">
-          <div className="w-full h-[80px] bg-gray-700 rounded-md animate-pulse" />
-          <div className="w-full h-[80px] bg-gray-700 rounded-md animate-pulse" />
-          <div className="w-full h-[80px] bg-gray-700 rounded-md animate-pulse" />
+          <div className="w-full h-[190px] bg-gray-700 rounded-md animate-pulse" />
+          <div className="w-full h-[190px] bg-gray-700 rounded-md animate-pulse" />
+          <div className="w-full h-[190px] bg-gray-700 rounded-md animate-pulse" />
         </div>
       ) : (
         <div className="flex justify-between align-center md:flex-row flex-col gap-[15px] w-full">
