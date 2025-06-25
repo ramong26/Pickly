@@ -151,14 +151,15 @@ https://pickly-gamma.vercel.app/
     │   ├───axios
     │   └───utils
     └───types
-
-
+```
 
 ## 설치 및 실행 방법
+```bash
 git clone https://github.com/part4-team6/Pickly.git
 cd pickly
 npm install
 npm run dev
+```
 
 ## 커밋 컨벤션 & 브랜치 전략
 ### 폴더/파일명 네이밍 컨벤션
