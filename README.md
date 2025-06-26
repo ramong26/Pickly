@@ -49,7 +49,6 @@ https://pickly-gamma.vercel.app/
 https://github.com/user-attachments/assets/e1ac0d29-9fad-4ff3-b00d-f7c24a7eb675
 
 
-
 ### 🧭 메인 페이지
 
 - 상품 검색, 카테고리별 정렬, 무한 스크롤 로딩 기능 구현
@@ -58,12 +57,14 @@ https://github.com/user-attachments/assets/52d0f46a-960e-47b1-a57b-a62ffb6a3c37
 - **상품 추가 기능**으로 직접 상품을 등록할 수 있습니다.
 https://github.com/user-attachments/assets/94dc0b5f-bd62-464c-903c-b45be65c2873
 
+
 ### 📄 상품 상세 페이지
 
 - 찜하기, 리뷰 작성/수정/삭제, 비교 기능 제공
 - 상품 등록자에게는 편집 및 삭제 기능이 추가로 제공됩니다.
 https://github.com/user-attachments/assets/0200de9a-2311-497c-8e46-8ca6ad687411
 https://github.com/user-attachments/assets/252a6d6a-7ac5-4702-bd84-18de424a8678
+
 
 ### ⚖️ 비교하기 페이지
 
