@@ -15,27 +15,24 @@ https://pickly-gamma.vercel.app/
 ## 🛠 기술 스택
 
 ### 🎨 Frontend
-
-- React
-- Next.js (App Router)
-- TypeScript
-- Tailwind CSS
-- Framer Motion
-- TanStack Query (React Query)
-- Zustand
+![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer%20Motion-0055FF?style=flat&logo=framer&logoColor=white)
+![TanStack Query](https://img.shields.io/badge/TanStack%20Query-FF4154?style=flat&logo=react-query&logoColor=white)
+![Zustand](https://img.shields.io/badge/Zustand-000000?style=flat&logo=zoo&logoColor=white)
 
 ### 🔧 Backend
-
-- Next.js API Routes (서버리스 백엔드)
-- MongoDB (NoSQL DB) – 유튜브, 스포티파이, OpenAI 등 검색 결과 저장
-- Cookie-based Auth – 로그인 시 토큰을 HTTP-only 쿠키에 저장
+![Next.js API](https://img.shields.io/badge/Next.js%20API%20Routes-000000?style=flat&logo=next.js&logoColor=white) – 서버리스 백엔드
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat&logo=mongodb&logoColor=white) – 유튜브, 스포티파이, OpenAI 등 검색 결과 저장
+![Auth](https://img.shields.io/badge/Cookie--based%20Auth-FFCC00?style=flat&logo=cookiecutter&logoColor=black) – 로그인 시 토큰을 HTTP-only 쿠키에 저장
 
 ### 🌐 External APIs
-
-- Spotify API – 음악 상품 → 해당 앨범으로 연동
-- YouTube API – 뮤직비디오 및 콘텐츠 제공
-- Google Maps API – 위치 기반 정보 연동
-- OpenAI API – 상품명과 설명을 분석해 YouTube/Spotify/Google Maps 링크 자동 생성
+![Spotify API](https://img.shields.io/badge/Spotify-1DB954?style=flat&logo=spotify&logoColor=white) – 음악 상품 → 해당 앨범으로 연동
+![YouTube API](https://img.shields.io/badge/YouTube-FF0000?style=flat&logo=youtube&logoColor=white) – 뮤직비디오 및 콘텐츠 제공
+![Google Maps API](https://img.shields.io/badge/Google%20Maps-4285F4?style=flat&logo=googlemaps&logoColor=white) – 위치 기반 정보 연동
+![OpenAI API](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white) – 상품명과 설명을 분석해 YouTube/Spotify/Google Maps 링크 자동 생성
 
 ---
 
