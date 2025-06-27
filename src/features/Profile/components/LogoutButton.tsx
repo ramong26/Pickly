@@ -2,7 +2,7 @@
 import { toast } from "react-hot-toast";
 import TypeButton from "@/components/shared/TypeButton";
 import { useRouter } from "next/navigation";
-import LogoutConfirmModal from "./LogoutConfirmModal";
+import ProductComparePlusModal from "@/components/shared/ProductComparePlusModal";
 import { useState } from "react";
 import { useUserStore } from "@/features/productId/libs/useUserStore";
 
@@ -22,7 +22,6 @@ export default function LogoutButton() {
         clearAll();
         toast.success("로그아웃 되었습니다.");
         router.push("/");
-        router.refresh();
       } else {
         toast.error("로그아웃 실패");
       }
@@ -41,10 +40,12 @@ export default function LogoutButton() {
       >
         로그아웃
       </TypeButton>
-      <LogoutConfirmModal
+      <ProductComparePlusModal
         open={modalOpen}
-        onCancel={() => setModalOpen(false)}
-        onConfirm={handleLogout}
+        setOpen={setModalOpen}
+        message="로그아웃 하시겠습니까?"
+        buttonText="로그아웃하기"
+        onButtonClick={handleLogout}
       />
     </>
   );

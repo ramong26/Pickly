@@ -12,7 +12,6 @@ export function useLoginMutation(
       const res = await apiInstance.post<AuthResponse>("/auth/signIn", form);
       const data = res.data;
 
-      // 2. 받은 토큰을 Next.js API Route로 전달
       await fetch("/api/login", {
         method: "POST",
         headers: {
@@ -55,7 +54,6 @@ export function useOAuthLoginMutation(
 
       const data = res.data;
 
-      // 2. 받은 accessToken을 Next.js API Route로 전달하여 쿠키 저장
       await fetch("/api/login", {
         method: "POST",
         headers: {

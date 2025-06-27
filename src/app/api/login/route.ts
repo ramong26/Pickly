@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import crypto from "crypto";
 
-// 로그인 후 accessToken을 받아서 쿠키를 생성하고
 export async function POST(req: NextRequest) {
   try {
     const { accessToken } = await req.json();
@@ -10,14 +9,13 @@ export async function POST(req: NextRequest) {
     const response = NextResponse.json({ success: true });
 
     response.cookies.set("access-token", accessToken, {
-      httpOnly: true, // xss 공격 보호
-      secure: true, // https에서만 사용
-      sameSite: "none", // csrf 공격 노출
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
       path: "/",
       maxAge: 60 * 30,
     });
 
-    // csrf 공영 방어를 위한 백업
     response.cookies.set("csrf-token", CSRFToken, {
       httpOnly: false,
       secure: true,

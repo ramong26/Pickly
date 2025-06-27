@@ -31,13 +31,11 @@ export default function OAuthSignUpPage() {
     handleSubmit,
     formState: { errors, isValid },
   } = useForm<SimpleJoinForm>({
-    mode: "onChange", // blur 시 유효성 검사
+    mode: "onChange",
     resolver: zodResolver(simpleJoinFormSchema),
   });
 
   const onSubmit: SubmitHandler<SimpleJoinForm> = async (data) => {
-    // 여기서 백엔드 API 호출하여 회원가입 처리
-
     try {
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_BASE_URL}/auth/signUp/${provider}`,
@@ -50,7 +48,6 @@ export default function OAuthSignUpPage() {
 
       console.log("회원가입 성공:", response.data);
 
-      // 회원가입 후 로그인 페이지 또는 메인으로 리다이렉트
       router.replace("/signin");
     } catch (error: AxiosError | any) {
       if (error.response?.data?.message) {
