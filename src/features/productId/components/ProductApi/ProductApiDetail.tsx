@@ -60,13 +60,14 @@ async function handleMovieCategory(combinedText: string) {
 
   let videoTrailer: YoutubeVideo[] = [];
   try {
-    videoTrailer = await getMusicvideo(parsedMovie);
+    videoTrailer = await getMusicvideo(`${parsedMovie} ` + "official trailer");
   } catch (e) {
     console.error("유튜브 fetch 실패 - videoTrailer:", e);
   }
 
   return { parsedMovie, videoTrailer };
 }
+
 // 장소(호텔, 음식점 등) 카테고리
 async function handlePlaceCategory(combinedText: string) {
   const placeInfoRaw = await fetchGoogleSearch(combinedText);

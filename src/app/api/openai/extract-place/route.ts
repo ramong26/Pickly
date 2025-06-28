@@ -1,13 +1,20 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
 
+import { connectToDB } from "@/features/productId/libs/mongo";
+import { OpenAIPlaceQuery } from "@/features/productId/hooks/monggoSchema";
+
 export async function POST(request: Request) {
   try {
     const { text } = await request.json();
     if (!text) {
       return NextResponse.json({ error: "Missing text" }, { status: 400 });
     }
-
+    await connectToDB();
+    const cached = await OpenAIPlaceQuery.findOne({ query: text });
+    if (cached) {
+      return NextResponse.json({ result: cached.result, cached: true });
+    }
     const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
     const completion = await openai.chat.completions.create({
@@ -40,6 +47,11 @@ Input: "{text}"`,
     });
 
     const result = completion.choices[0].message?.content || "";
+    await OpenAIPlaceQuery.create({
+      query: text,
+      result,
+      createdAt: new Date(),
+    });
     return NextResponse.json({ result });
   } catch (error) {
     const err = error as Error;

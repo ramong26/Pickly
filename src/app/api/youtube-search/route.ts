@@ -1,7 +1,7 @@
 export const runtime = "nodejs";
 
 import { connectToDB } from "@/features/productId/libs/mongo";
-import { YoutubeVideoModel } from "@/features/productId/hooks/YoutubeVideo";
+import { YoutubeVideoModel } from "@/features/productId/hooks/monggoSchema";
 import { NextRequest, NextResponse } from "next/server";
 import axios from "axios";
 
