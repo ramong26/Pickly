@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { productService } from "@/features/productId/api";
 
 import ProductStatsClient from "@/features/productId/components/ProductIdStats/ProductIdStatsClient";
-import ProductIdDetailServer from "@/features/productId/components/ProductIdDetail/ProductIdDetailServer";
+import ProductIdDetailClient from "@/features/productId/components/ProductIdDetail/ProductIdDetail";
 import ProductReviewsFetch from "@/features/productId/components/ProductReviews/ProductReviewsFetch";
 import ProductApiDetail from "@/features/productId/components/ProductApi/ProductApiDetail";
 
@@ -20,7 +20,8 @@ export default async function ProductIdPage({ params }: PageProps) {
   const product = await productService.getProductsId(productId);
   const productReviews = await productService.getProductsIdReviews(
     productId,
-    "recent"
+    "recent",
+    undefined
   );
 
   const initialData = productReviews.data;
@@ -28,7 +29,7 @@ export default async function ProductIdPage({ params }: PageProps) {
 
   return (
     <div className="lg:w-[940px] mx-auto  lg:mb-[120px] lg:my-[160px] md:w-[684px] w-[335px] md:mt-[140px] md:mb-[147px] mt-[130px] mb-[200px] flex flex-col gap-[60px]">
-      <ProductIdDetailServer product={productDetail} />
+      <ProductIdDetailClient product={productDetail} />
       {[1, 2, 4, 6].includes(productDetail.category?.id ?? 0) && (
         <ProductApiDetail product={productDetail} />
       )}
