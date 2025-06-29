@@ -21,7 +21,6 @@ https://pickly-gamma.vercel.app/
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white)<br>
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)<br>
 ![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white)<br>
-![Framer Motion](https://user-images.githubusercontent.com/663da034-8a7d-48e9-9b6a-bbc2ad9fbb99.png)
 ![TanStack Query](https://img.shields.io/badge/TanStack%20Query-FF4154?style=flat&logo=react-query&logoColor=white)<br>
 ![Zustand](https://img.shields.io/badge/Zustand-000000?style=flat&logo=zoo&logoColor=white)<br>
 
@@ -36,6 +35,9 @@ https://pickly-gamma.vercel.app/
 ![Google Maps API](https://img.shields.io/badge/Google%20Maps-4285F4?style=flat&logo=googlemaps&logoColor=white) – 위치 기반 정보 연동 <br>
 ![OpenAI API](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white) – 상품명과 설명을 분석해 YouTube/Spotify/Google Maps 링크 자동 생성 <br>
 
+### 🧩 Animation / Utility
+<sub><sup>※ 주요 기능은 아니지만 사용됨</sup></sub><br>
+![Framer Motion](https://img.shields.io/badge/Framer--Motion-0055FF?style=flat&logo=framer&logoColor=white)
 ---
 
 ## 👀 서비스 둘러보기
