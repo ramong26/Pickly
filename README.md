@@ -21,7 +21,7 @@ https://pickly-gamma.vercel.app/
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white)<br>
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)<br>
 ![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white)<br>
-![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat&logo=kotlin&logoColor=white)<br>
+![Framer Motion](https://www.framer.com/motion/)
 ![TanStack Query](https://img.shields.io/badge/TanStack%20Query-FF4154?style=flat&logo=react-query&logoColor=white)<br>
 ![Zustand](https://img.shields.io/badge/Zustand-000000?style=flat&logo=zoo&logoColor=white)<br>
 
