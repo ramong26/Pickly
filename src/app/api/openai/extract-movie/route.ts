@@ -12,7 +12,10 @@ export async function POST(request: Request) {
       apiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY!,
     });
 
-    const prompt = `너는 사용자의 입력에서 영화나 드라마 제목을 추출해서 다음 JSON 형식으로만 응답해야 해:
+    const prompt = `You are an assistant that extracts movie or drama titles from user input. 
+Respond only in the format: {"trailer": "작품명 official trailer"}.
+Use your knowledge to identify the most likely correct title.
+Only include the title, not the year or other metadata:
 {"trailer": "작품명 official trailer"}
 
 예시:
