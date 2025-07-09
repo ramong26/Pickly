@@ -8,7 +8,7 @@
 
 ## 🔗 배포 주소
 
-https://pickly-gamma.vercel.app/
+https://pickly-one.vercel.app  
 
 - 테스트 아이디: test2639@naver.com
 - 테스트 비밀번호: @00000000
